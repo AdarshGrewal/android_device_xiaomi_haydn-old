@@ -65,6 +65,7 @@ PRODUCT_PACKAGES += \
     audio.usb.default
 
 PRODUCT_PACKAGES += \
+    liba2dpoffload \
     libcirrusspkrprot \
     libcomprcapture \
     libexthwplugin \
