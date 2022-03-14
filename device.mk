@@ -104,8 +104,7 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    audio.bluetooth.default \
-    libbthost_if
+    audio.bluetooth.default
 
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl \
