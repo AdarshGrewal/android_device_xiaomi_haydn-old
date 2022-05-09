@@ -5,7 +5,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_haydn.mk
+    $(LOCAL_DIR)/lineage_haydn.mk
 
 COMMON_LUNCH_CHOICES := \
     aosp_haydn-user \
