@@ -16,6 +16,8 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_USES_AOSP_RECOVERY := true
+LINEAGE_BUILD_VARIANT := VANILLA
+LINEAGE_BUILDTYPE=UNOFFICIAL
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := lineage_haydn
