@@ -222,9 +222,6 @@ debug.stagefright.ccodec=4
 debug.stagefright.omx_default_rank=0
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
-# NFC
-ro.nfc.port=I2C
-
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.perf-hal.ver=2.2
@@ -319,3 +316,12 @@ vendor.media.wfd.automode=1
 
 # WiFi
 wifi.aware.interface=wifi-aware0
+
+# Camera
+persist.vendor.camera.physical.num=4
+
+# Motorola
+ro.mot.build.customerid=global
+
+# NFC
+ro.vendor.hw.nfc=st

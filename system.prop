@@ -65,3 +65,7 @@ persist.device_config.runtime_native.usap_pool_enabled=true
 
 #Disable MTE Async for system server
 arm64.memtag.process.system_server=off
+
+# Google
+ro.opa.device_model_id=motorola-dubai
+ro.opa.eligible_device=true
