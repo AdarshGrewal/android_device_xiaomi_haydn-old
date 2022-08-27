@@ -19,7 +19,6 @@
 #include <android/hardware/biometrics/fingerprint/2.3/IBiometricsFingerprint.h>
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
-#include <vendor/egistec/hardware/fingerprint/4.0/IBiometricsFingerprintRbs.h>
 
 namespace android {
 namespace hardware {
@@ -38,7 +37,6 @@ using ::android::hardware::hidl_vec;
 using ::android::hardware::Return;
 using ::android::hardware::Void;
 using ::android::sp;
-using ::vendor::egistec::hardware::fingerprint::V4_0::IBiometricsFingerprintRbs;
 
 struct BiometricsFingerprint : public IBiometricsFingerprint {
     BiometricsFingerprint();
@@ -61,7 +59,6 @@ struct BiometricsFingerprint : public IBiometricsFingerprint {
 
 private:
     sp<IBiometricsFingerprint_2_1> biometrics_2_1_service;
-    sp<IBiometricsFingerprintRbs> mBiometricsFingerprintRbs;
 };
 
 }  // namespace implementation

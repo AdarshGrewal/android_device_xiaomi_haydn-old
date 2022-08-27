@@ -38,53 +38,8 @@ namespace fingerprint {
 namespace V2_3 {
 namespace implementation {
 
-static bool readBool(int fd) {
-    char c;
-    int rc;
-
-    rc = lseek(fd, 0, SEEK_SET);
-    if (rc) {
-        LOG(ERROR) << "failed to seek fd, err: " << rc;
-        return false;
-    }
-
-    rc = read(fd, &c, sizeof(char));
-    if (rc != 1) {
-        LOG(ERROR) << "failed to read bool from fd, err: " << rc;
-        return false;
-    }
-
-    return c != '0';
-}
-
 BiometricsFingerprint::BiometricsFingerprint() {
     biometrics_2_1_service = IBiometricsFingerprint_2_1::getService();
-    mBiometricsFingerprintRbs = IBiometricsFingerprintRbs::getService();
-
-    std::thread([this]() {
-        int fd = open(FOD_UI_PATH, O_RDONLY);
-        if (fd < 0) {
-            LOG(ERROR) << "failed to open fd, err: " << fd;
-            return;
-        }
-
-        struct pollfd fodUiPoll = {
-            .fd = fd,
-            .events = POLLERR | POLLPRI,
-            .revents = 0,
-        };
-
-        while (true) {
-            int rc = poll(&fodUiPoll, 1, -1);
-            if (rc < 0) {
-                LOG(ERROR) << "failed to poll fd, err: " << rc;
-                continue;
-            }
-
-            mBiometricsFingerprintRbs->extra_api(readBool(fd) ? NOTIFY_FINGER_DOWN : NOTIFY_FINGER_UP, {},
-                [](int, const hidl_vec<signed char>&) {});
-        }
-    }).detach();
 }
 
 Return<uint64_t> BiometricsFingerprint::setNotify(const sp<IBiometricsFingerprintClientCallback>& clientCallback) {
