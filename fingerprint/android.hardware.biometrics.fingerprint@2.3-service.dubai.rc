@@ -1,0 +1,4 @@
+service fps_hal.dubai /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.3-service.dubai
+    class late_start
+    user system
+    group system input uhid

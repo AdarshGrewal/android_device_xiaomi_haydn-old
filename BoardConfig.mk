@@ -18,6 +18,10 @@ BOARD_VENDOR := motorola
 
 DEVICE_PATH := device/motorola/dubai
 
+# FOD
+TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.dubai
+TARGET_USES_FOD_ZPOS := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
