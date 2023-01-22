@@ -84,6 +84,11 @@ DEVICE_MANIFEST_FILE := \
     $(COMMON_PATH)/hidl/manifest_lineage.xml \
     $(COMMON_PATH)/hidl/manifest_xiaomi.xml
 
+ifneq ($(EXCLUDE_COMMON_SE_MANIFEST),true)
+DEVICE_MANIFEST_FILE += \
+    $(COMMON_PATH)/hidl/manifest_secure_element.xml
+endif
+
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_IMAGE_NAME := Image
